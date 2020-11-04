@@ -1,0 +1,6 @@
+--class-path hx
+--class-path externs
+--main Main
+--js bin/example.js
+--dce full
+-D js-es=6
