@@ -199,6 +199,6 @@ source: https://github.com/elsassph/webpack-haxe-example/blob/vanilla/package.js
 
 ## Improvement
 
-- [ ] remove ts folder structure
-- [ ] remove ts webpacker (use js version)
-- [ ] use https://github.com/jasononeil/webpack-haxe-loader for Haxe webpack
+- [x] remove ts folder structure
+- [x] remove ts webpacker (use js version)
+- [x] use https://github.com/jasononeil/webpack-haxe-loader for Haxe webpack
