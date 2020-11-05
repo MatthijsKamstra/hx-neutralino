@@ -1,20 +1,22 @@
 package;
 
-import js.Syntax;
 import global.IndexGlobal.*;
 import global.Neutralino;
 import appcore.AppLib;
 import js.Browser.*;
 
+// import Webpack.*;
 class Main {
-	@:keep static var STYLES = js.Lib.require('./App.css');
-
+	// @:keep static var STYLES = require('./App.css');
+	// static var STYLES = require('./Foo.css');
+	// static var IMG = require('./bug.png');
+	// static var CONFIG = require('../config.json');
 	public function new() {
 		trace('Main');
 
 		// js.Lib.require('test');
 
-		// Syntax.code("import './m ycss2.css';");
+		// Syntax.code("import './App.css';");
 
 		var appLib = new AppLib();
 
@@ -41,6 +43,11 @@ class Main {
 				+ "<span>v"
 				+ NL_VERSION
 				+ "</span>";
+
+		Dom.body().appendChild(Dom.html('<h1>Welcome to Webpack + haxe</h1>'));
+
+		// var foo = new com.Foo();
+		// Dom.body().appendChild(foo.view);
 	}
 
 	static public function main() {

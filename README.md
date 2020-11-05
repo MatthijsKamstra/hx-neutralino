@@ -159,7 +159,7 @@ you will end up with a tree structure like this
 ### Set up Haxe
 
 - create folder `hx`
-- create `Main.hx` and copy this [`Main.hx` content](hx/Main.hx)
+- create `Main.hx` and copy this [`Main.hx` content](hx/Main.hx) and [`appcore/Applib.hx`](hx/appcore/Applib.hx)
 - create `build.hxml`
 
 For now this will bypass the whole webpacker setup
@@ -174,6 +174,28 @@ For now this will bypass the whole webpacker setup
 --dce full
 -D js-es=6
 ```
+
+#### haxe-loader
+
+install haxe-loader (https://github.com/jasononeil/webpack-haxe-loader)
+
+```bash
+haxelib install haxe-loader
+```
+
+```bash
+npm install --save-dev css-loader file-loader haxe-loader
+```
+
+and uninstall
+
+```bash
+npm uninstall typescript ts-loader
+```
+
+example
+
+source: https://github.com/elsassph/webpack-haxe-example/blob/vanilla/package.json
 
 ## Improvement
 
