@@ -2,7 +2,7 @@
 (function ($global) { "use strict";
 class Main {
 	constructor() {
-		console.log("hx/Main.hx:11:","Main");
+		console.log("hx/Main.hx:13:","Main");
 		let appLib = new appcore_AppLib();
 		let _gthis = this;
 		Neutralino.init({ load : function() {
@@ -42,5 +42,6 @@ class haxe_iterators_ArrayIterator {
 		return this.array[this.current++];
 	}
 }
+Main.STYLES = require("./App.css");
 Main.main();
 })({});

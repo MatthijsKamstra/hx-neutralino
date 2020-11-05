@@ -7,10 +7,14 @@ import appcore.AppLib;
 import js.Browser.*;
 
 class Main {
+	@:keep static var STYLES = js.Lib.require('./App.css');
+
 	public function new() {
 		trace('Main');
 
-		// Syntax.code("import './mycss2.css';");
+		// js.Lib.require('test');
+
+		// Syntax.code("import './m ycss2.css';");
 
 		var appLib = new AppLib();
 

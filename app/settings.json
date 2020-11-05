@@ -4,8 +4,9 @@
   "mode": "window",
   "iconfile": "neutralino.png",
   "window": {
-    "width": "1000",
+    "width": "700",
     "height": "700",
-    "fullscreen": false
+    "fullscreen": false,
+    "borderlesswindow": true
   }
 }
