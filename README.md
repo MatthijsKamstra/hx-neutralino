@@ -53,14 +53,31 @@ The haxe part:
 
 ### tl;dr (Haxe)
 
+```
+# install dts2hx via npm
+npm install dts2hx --save-dev
+
+# copy typescript file to correct folder
+mkdir -p node_modules/@types/neutralino
+cp -i src/index.d.ts node_modules/@types/neutralino/index.d.ts
+
+# convert typescript files to hx
+npx dts2hx neutralino/index.d.ts
+```
+
 ### Get started (Haxe)
+
+Install dts2hx via npm, we will us that to generate externs for Haxe
 
 ```
 # install dts2hx via npm
 npm install dts2hx --save-dev
 ```
 
-copy file to correct folder to convert to externs
+Copy file to correct folder to convert to externs
+
+Currently dts2hx expects the ts files to be in a repo in `node_modules`,
+to get that working we just copy the files to that folder.
 
 ```
 # copy typescript file to correct folder
@@ -68,19 +85,86 @@ mkdir -p node_modules/@types/neutralino
 cp -i src/index.d.ts node_modules/@types/neutralino/index.d.ts
 ```
 
-convert the typescript files to Haxe externs
+And convert the typescript files to Haxe externs
 
 ```
 # convert typescript files to hx
 npx dts2hx neutralino/index.d.ts
 ```
 
+The [Haxe externs](externs/)
+
+## structure
+
+you will end up with a tree structure like this
+
+```
+.
+├── LICENSE
+├── README.md
+├── app
+│   ├── assets
+│   │   ├── app.css
+│   │   ├── app.js
+│   │   └── neutralino.js
+│   ├── index.html
+│   ├── settings-browser.json
+│   ├── settings-cloud.json
+│   └── settings.json
+├── externs
+│   ├── global
+│   │   ├── IndexGlobal.hx
+│   │   ├── Neutralino.hx
+│   │   └── neutralino
+│   │       ├── App.hx
+│   │       ├── AppMode.hx
+│   │       ├── Computer.hx
+│   │       ├── Debug.hx
+│   │       ├── DirectoryData.hx
+│   │       ├── FileData.hx
+│   │       ├── Filesystem.hx
+│   │       ├── InitOptions.hx
+│   │       ├── LogSuccessData.hx
+│   │       ├── LogType.hx
+│   │       ├── Os.hx
+│   │       ├── RamData.hx
+│   │       ├── Settings.hx
+│   │       ├── SettingsData.hx
+│   │       ├── StdoutData.hx
+│   │       ├── Storage.hx
+│   │       ├── StoragePutData.hx
+│   │       ├── SuccessData.hx
+│   │       └── ValueData.hx
+│   └── ts
+│       └── Tuple1.hx
+├── hx-neutralino-linux
+├── hx-neutralino-mac
+├── hx-neutralino-win.exe
+├── neutralino.png
+├── neutralinojs.log
+├── package-lock.json
+├── package.json
+├── src
+│   ├── app-core
+│   │   └── lib.ts
+│   ├── app.ts
+│   ├── index.d.ts
+│   ├── mycss.css
+│   └── mycss2.css
+├── storage
+├── tsconfig.json
+└── webpack.config.js
+```
+
 ### Set up Haxe
 
 - create folder `hx`
-- create `Main.hx`
+- create `Main.hx` and copy this [`Main.hx` content](hx/Main.hx)
+- create `build.hxml`
 
-creat build.hxml
+For now this will bypass the whole webpacker setup
+
+##### build.hxml
 
 ```xml
 --class-path hx
